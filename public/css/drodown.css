@@ -1,0 +1,24 @@
+/* # = class, . = id */
+
+
+.dropbtn{
+    background-color: gray;
+    color: white;
+    padding: 20px;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus{
+    background-color: yellow;
+}
+
+#MyInput{
+    box-sizing: border-box;
+    background-position: 14px 12px;
+    background-repeat: no-repeat;
+    font-size: 20px;
+    border: none;
+    
+}

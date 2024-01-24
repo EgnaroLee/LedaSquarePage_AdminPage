@@ -1,0 +1,114 @@
+/* 상단 배너 부분 */
+.banner{
+    background: #25B7AA;
+    height: 100px;
+    border-bottom: 1px solid #1e9b90;
+    margin: 0;
+}
+
+.banner h1{
+    color: white;
+}
+
+/* body */
+body{
+    height: 1000px;
+    background: #1e9b90;
+    margin: 0;
+}
+
+/* 메인 페이지 */
+.mainpage {
+    background: #93bbb8;
+    float: right;
+    width: 80%;
+    height: 100%;
+    margin: 0;
+}
+
+/* 메인화면 text */
+.maintext{
+    font-size: 30px;
+    font-weight: 1000;
+    padding-left: 20px;
+    padding-top: 10px;
+    color: white;
+    margin: 0;
+    
+ 
+}
+
+/* 메인화면 하단 줄 */
+.line1{
+    margin-left: 10px;
+    border-bottom: 4px solid #88b1ae;
+    padding-top: 8px;
+    
+    width: 145px;
+}
+
+/* 최근 추가목록 txt */
+.addtext{
+    font-size: 18px;
+    font-weight: 1000;
+    color:white;
+    margin: 0;
+    padding-top: 25px;
+    padding-left: 30px;
+}
+
+/* 최근 추가 목록 Box */
+.addlistbox{
+    width: 80%;
+    height: 40%;
+    margin-left: 5%;
+    margin-top: 15px;
+    border: 3px solid #88b1ae;
+    padding-left: 10%;
+    
+}
+
+
+
+/* 사이드 바 */
+.sidebar_back {
+    height: 100%;
+    float: left;
+    background: #000;
+    margin:0;
+}
+.side_bar {
+    position: fixed;    /* 스크롤따라 같이 이동 */
+    background: #21a79b;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+    width: 20%;
+    margin: 0;
+}
+
+.side_bar ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+
+
+}
+
+.side_bar ul li {
+    width: 100%;
+    padding: 10px;
+    list-style: none;
+} 
+
+.side_bar ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 1000;
+}
+
