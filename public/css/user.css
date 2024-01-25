@@ -1,8 +1,29 @@
 .serchbox{
-    width: 80%;
+    width: 90%;
     height: 100px;
     margin-left: 5%;
     margin-top: 15px;
     border: 3px solid #88b1ae;
-    padding-left: 10%;
+
+}
+
+.dorpdownbox{
+    width: 70px;
+    height: 30px;
+    border: 2px solid #88B1AE;
+    background: white;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.labelname{
+    margin-top: 10px;
+    color: white;
+    font-size: 17px;
+    font-weight: 1000;
+
+}
+
+.labelname tr th{
+    margin: 30px;
 }
