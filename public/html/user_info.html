@@ -1,88 +1,81 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <meta charset="utf-8">
-      <title>정보 목록</title>
-        
-       <link rel="stylesheet" href="/css/drodown.css">
-       <link rel="stylesheet" href="/css/mainpage.css">
-       <link rel="stylesheet" href="/css/banner.css">
-       <link rel="stylesheet" href="/css/user.css">
-       
-       <div class="banner" style="color: white;">
-              <h1>레다 스퀘어</h1>
-            </div>
-    </head>
-    
-        <script src="/js/dropdownbar.js"></script>
-      
- 
-          <body>
-        
-            
-            
-          <div class="mainpage">
-            <div class="maintext">
-              <tr>유저 정보</tr>
-              
-            </div>
-            <div class="line1">
-              <tr></tr>
-            </div>
-            
-            <div class="serchbox">
-              
-              <div class="dorpdownbox">
-                <tr></tr>
-              </div>
 
-            </div>
-            
-            <div class="addtext">
-              <tr>목록</tr>
-            </div>
-            
-            
-            <div class="addlistbox">
-       
-              <div class="labelname">
-                <tr>
-                  <th>Date</th>
-                  <th>Theme</th>
-                  <th>Name</th>
-                  <th>Number</th>
-                  <th>Agree</th>
-                </tr>
-              </div>
-              <div>
-               <th></th>
-              </div>
-             
-             
-            </div>
-            
-          </div>
-          <div class="sidebar_back">
-        
-              <aside class="side_bar">
-                <ul>
-                    <li><a href="/html/index.html">Home</a></li>
-                    <li><a href="/html/user_info.html">Info</a></li>
-                    <li><a href="/html/theme.html">Theme</a></li>
-                </ul>
-              
-            </aside>
-            
-          </div>
-  
-         
-             
-          </body>
-          
-              
-              
+<head>
+  <meta charset="utf-8">
+  <title>정보 목록</title>
 
-        
-        
-        
+  <link rel="stylesheet" href="/css/drodown.css">
+  <link rel="stylesheet" href="/css/mainpage.css">
+  <link rel="stylesheet" href="/css/banner.css">
+  <link rel="stylesheet" href="/css/user.css">
+</head>
+
+<body>
+  <div class="banner" style="color: white;">
+    <h1>레다 스퀘어</h1>
+  </div>
+
+
+  <div class="mainpage">
+    <div class="maintext">
+      <br>유저 정보</br>
+    </div>
+    <div class="line1">
+      <tr></tr>
+    </div>
+
+    <div class="serchbox">
+
+      <div class="dorpdownbox">
+        <tr></tr>
+      </div>
+
+    </div>
+
+    <div class="addtext">
+      <h2>목록</h2>
+    </div>
+
+
+    <div class="addlistbox">
+
+      <table id="data_table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Theme</th>
+            <th>Name</th>
+            <th>Number</th>
+            <th>Agree</th>
+          </tr>
+        </thead>
+        <tbody id="data_body"></tbody>
+      </table>
+
+      <div id="paging_btn">
+
+      </div>
+
+    </div>
+
+  </div>
+  <div class="sidebar_back">
+
+    <aside class="side_bar">
+      <ul>
+        <li><a href="/html/index.html">Home</a></li>
+        <li><a href="/html/user_info.html">Info</a></li>
+        <li><a href="/html/theme.html">Theme</a></li>
+      </ul>
+    </aside>
+
+  </div>
+
+  <script src="/js/dropdownbar.js"></script>
+  <script src="../js/userinfo.js"></script>
+
+
+</body>
+
 </html>
