@@ -1,4 +1,5 @@
-.serchbox {
+.searchbox {
+    position: relative;
     width: 90%;
     height: 100px;
     margin-left: 5%;
@@ -28,18 +29,46 @@
     margin: 30px;
 }
 
-#data_table {
+#data_table,
+#recent_data_table {
+    position: absolute;
     border-collapse: collapse;
     width: 100%;
-    margin: 5% 5% 0 auto;
+    margin: 0 5% 0 auto;
 }
 
-#data_table th,
-#data_table td {
-
+#data_table th {
     border: 2px solid #dddddd;
-    text-align: left;
+    color: white;
     padding: 8px;
     white-space: nowrap;
     /*텍스트 줄바꿈 고정*/
+}
+
+#data_table td {
+    border: 2px solid #dddddd;
+    color: white;
+    padding: 8px;
+    white-space: nowrap;
+}
+
+#recent_data_table th {
+    border: 2px solid #dddddd;
+    color: white;
+    padding: 8px;
+    white-space: nowrap;
+    /*텍스트 줄바꿈 고정*/
+}
+
+#recent_data_table td {
+    border: 2px solid #dddddd;
+    color: white;
+    padding: 8px;
+    white-space: nowrap;
+}
+
+#paging_btn {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
 }

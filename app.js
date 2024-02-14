@@ -45,6 +45,19 @@ app.get('/totalPages', function (req, res) {
     });
 });
 
+app.get('/recentData', (req, res) => {
+    const sixHoursAgo = new Date(Date.now() - 6 * 60 * 60 * 1000);
+    const sql = `SELECT * FROM mobileappDB.userinfo_1 WHERE daytime >= ?`;
+    conn.query(sql, [sixHoursAgo], (err, result) => {
+        if (err) {
+            console.error('Error fetching recent data:', err);
+            res.status(500).json({ error: 'Internal server error' });
+            return;
+        }
+        res.json(result);
+    });
+});
+
 // 서버 실행
 app.listen(port, function () {
     console.log('서버연결')

@@ -1,66 +1,75 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 
-   
-  <head>
-    <meta charset="utf-8">
-    <title>Leda Square</title>
-    <link rel="stylesheet" href="/css/mainpage.css">
-    <link rel="stylesheet" href="/css/banner.css">
-       
-    <div class="banner">
-      <h1>레다 스퀘어</h1>
+<head>
+  <meta charset="utf-8">
+  <title>Leda Square</title>
+  <link rel="stylesheet" href="/css/mainpage.css">
+  <link rel="stylesheet" href="/css/banner.css">
+  <link rel="stylesheet" href="/css/user.css">
+
+  <div class="banner">
+    <h1>Leda Square</h1>
+  </div>
+
+</head>
+
+
+<body>
+  <div class="mainpage">
+    <div class="maintext">
+      <br>메인화면</br>
+
     </div>
-    
-  </head>
-  
+    <div class="line1">
+      <tr></tr>
+    </div>
+
+    <div class="addtext">
+      <br>최근 추가목록</br>
+    </div>
+
+    <div class="addlistbox">
+      <table id="recent_data_table">
+        <thead>
+          <tr>
+            <th id="recent_date">날짜</th>
+            <th id="recent_theme">테마명</th>
+            <th id="recent_name">이름</th>
+            <th id="recent_pnum">전화번호</th>
+            <th id="recent_agree">동의</th>
+          </tr>
+        </thead>
+        <tbody id="recent_data_body"></tbody>
+      </table>
+
+      <div id="paging_btn">
+
+      </div>
+
+    </div>
+
+  </div>
+  <div class="sidebar_back">
+
+    <aside class="side_bar">
+      <ul>
+        <li><a href="/html/index.html">Home</a></li>
+        <li><a href="/html/user_info.html">Info</a></li>
+        <li><a href="/html/theme.html">Theme</a></li>
+      </ul>
+
+    </aside>
+
+  </div>
+
+
+  </div>
+
   <script src="/js/sidebar.js"></script>
+  <script src="../js/userinfo.js"></script>
+  <script src="/js/recent_data.js"></script>
 
-  <body>
-      <div class="mainpage">
-        <div class="maintext">
-          <tr>메인화면</tr>
-          
-        </div>
-        <div class="line1">
-          <tr></tr>
-        </div>
-        
-        <div class="addtext">
-          <tr>최근 추가목록</tr>
-        </div>
-        
-        <div class="addlistbox">
-          <tr></tr>
-        </div>
-        
-      </div>
-      <div class="sidebar_back">
-        
-          <aside class="side_bar">
-            <ul>
-                <li><a href="/html/index.html">Home</a></li>
-                <li><a href="/html/user_info.html">Info</a></li>
-                <li><a href="#">Theme</a></li>
-            </ul>
-          
-        </aside>
-        
-      </div>
- 
-    
-  
-     
-        
-    </div> 
+</body>
 
-    
-    
-    
-    
-
-   
-
-  </body>
-  
 </html>

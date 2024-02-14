@@ -1,21 +1,33 @@
+function search() {
+    var input = document.getElementById("search_input").value.toLowerCase();
+    var catecory = document.getElementById("search_category").value.toLowerCase();
 
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
-  
-function filterFunction() {
-    var input, filter, ul, li, a, i;
-    input = document.getElementById("myInput");
-    filter = input.value.toUpperCase();
-    div = document.getElementById("myDropdown");
-    a = div.getElementsByTagName("a");
+    var rows = document.querySelectorAll("#data_table tbody tr");
 
-    for (i = 0; i < a.length; i++) {
-        txtValue = a[i].textContent || a[i].innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            a[i].style.display = "";
-        } else {
-            a[i].style.display = "none";
+    rows.forEach(function (row) {
+        var cells = row.querySelectorAll("td");
+        var found = false;
+        cells.forEach(function (cell, index) {
+            if ((catecory === "daytime" && index === 0) ||
+                (catecory === "theme" && index === 1) ||
+                (catecory === "name" && index === 2) ||
+                (catecory === "number" && index === 3)) {
+                if (cell.textContent.toLowerCase().indexOf(input) > -1) {
+                    found = true;
+                }
+            }
+        });
+        if (found) {
+            row.style.display = "";
         }
-     }
+        else {
+            row.style.display = "none";
+        }
+    });
+}
+
+document.getElementById("search_input").addEventListener("keyup", function (event) {
+    if (event.key === "Enter") {
+        search();
     }
+});

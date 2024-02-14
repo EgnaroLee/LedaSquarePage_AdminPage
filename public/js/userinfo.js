@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
         fetch(`/totalPages`)
             .then(response => response.json())
             .then(data => {
-                displayPagination(data.totalPages); // 전체 페이지 수를 받아와서 페이징 버튼을 생성합니다.
+                displayPagination(data.totalPages); // 전체 페이지 수 받아와 버튼 생성
             })
             .catch(error => console.error("Error fetching total pages: ", error));
     }
@@ -16,17 +16,25 @@ document.addEventListener("DOMContentLoaded", function () {
         fetch(`/a?page=${page}`)
             .then(response => response.json())
             .then(data => {
+                data.sort((a, b) => new Date(b.daytime) - new Date(a.daytime)); // 데이터를 최신순으로 정렬
+
                 const tableBody = document.getElementById('data_body');
                 tableBody.innerHTML = '';
                 data.forEach(item => {
+
+                    // 날짜 시간 형식 변경
                     const [year, month, day, hours, minutes, seconds] = parseDateTime(item.daytime);
+
+                    // 전화번호 형식 변경
+                    const formattedPnum = formatPhoneNumber(item.pnum);
+
                     const row = document.createElement('tr');
                     row.innerHTML = `
                     <td>${year}-${month}-${day} ${hours}:${minutes}:${seconds}</td>
                         <td>${item.theme}</td>
                         <td>${item.name}</td>
-                        <td>${item.pnum}</td>
-                        <td>${item.agreement}</td>`;
+                        <td>${formattedPnum}</td>
+                        <td>${item.agreement ? 'O' : ''}</td>`;
                     tableBody.appendChild(row);
                 });
                 currentPage = page; // 현재 페이지 갱신
@@ -38,9 +46,9 @@ document.addEventListener("DOMContentLoaded", function () {
     function parseDateTime(dateTimeString) {
         const dateTime = new Date(dateTimeString);
         const year = dateTime.getFullYear();
-        const month = String(dateTime.getMonth() + 1).padStart(2, '0'); 
-        const day = String(dateTime.getDate()).padStart(2, '0'); 
-        const hours = String(dateTime.getHours()).padStart(2, '0'); 
+        const month = String(dateTime.getMonth() + 1).padStart(2, '0');
+        const day = String(dateTime.getDate()).padStart(2, '0');
+        const hours = String(dateTime.getHours()).padStart(2, '0');
         const minutes = String(dateTime.getMinutes()).padStart(2, '0');
         const seconds = String(dateTime.getSeconds()).padStart(2, '0');
         return [year, month, day, hours, minutes, seconds];
@@ -61,6 +69,18 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    getTotalPages(); // 페이지가 로드될 때 전체 페이지 수를 불러옵니다.
-    infodata(currentPage); // 페이지가 로드될 때 첫 번째 페이지의 데이터를 불러옵니다.
+    // 전화번호 형식 변경 함수
+    function formatPhoneNumber(pnum) {
+        const regex = /^(\d{3})(\d{4})(\d{4})$/;
+        const match = pnum.match(regex);
+        if (match) {
+            return `${match[1]}-${match[2]}-${match[3]}`;
+        } else {
+            return pnum;
+        }
+    }
+
+
+    getTotalPages(); // 페이지 로드 시 전체 페이지 수 불러오기
+    infodata(currentPage); // 페이지 로드 시 첫 번째 페이지 데이터 불러오기
 });
