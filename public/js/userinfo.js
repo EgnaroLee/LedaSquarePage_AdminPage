@@ -1,6 +1,7 @@
+
 document.addEventListener("DOMContentLoaded", function () {
     let currentPage = 1; // 현재 페이지 초기값 설정
-
+    const itemsPerPage = 8;
     // 서버로부터 전체 페이지 수를 받아오는 함수
     function getTotalPages() {
         fetch(`/totalPages`)
@@ -13,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 데이터를 불러오고 화면에 표시하는 함수
     function infodata(page) {
+        const offset = (page - 1) * itemsPerPage;
         fetch(`/a?page=${page}`)
             .then(response => response.json())
             .then(data => {
@@ -20,7 +22,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 const tableBody = document.getElementById('data_body');
                 tableBody.innerHTML = '';
-                data.forEach(item => {
+                const itemsToShow = data.slice(offset, offset + itemsPerPage);
+                itemsToShow.forEach(item => {
 
                     // 날짜 시간 형식 변경
                     const [year, month, day, hours, minutes, seconds] = parseDateTime(item.daytime);
