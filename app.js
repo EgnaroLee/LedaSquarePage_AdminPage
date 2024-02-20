@@ -16,7 +16,7 @@ app.get('/', function (req, res) {
 // db 데이터 불러와서 보여줌
 app.get('/a', function (req, res) {
     const page = req.query.page || 1;
-    const itemsPerPage = 10;    // 페이지 당 아이템 개수
+    const itemsPerPage = 8;    // 페이지 당 아이템 개수
     const offset = (page - 1) * itemsPerPage;
 
     const sql = "select daytime, theme, name, pnum, agreement from mobileappDB.userinfo_1;";
@@ -31,7 +31,7 @@ app.get('/a', function (req, res) {
 
 // 전체 페이지 수를 반환하는 라우트
 app.get('/totalPages', function (req, res) {
-    const itemsPerPage = 10; // 페이지 당 아이템 개수
+    const itemsPerPage = 8; // 페이지 당 아이템 개수
     const sql = "SELECT COUNT(*) AS total FROM mobileappDB.userinfo_1";
     conn.query(sql, function (err, result) {
         if (err) {
