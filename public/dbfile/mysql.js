@@ -7,7 +7,7 @@ var db_info = {
     password: 'a1234567',
     database: 'mobileappDB'
 
-};
+}; 
 
 
 
