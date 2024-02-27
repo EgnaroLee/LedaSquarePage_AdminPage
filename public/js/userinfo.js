@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let currentPage = 1; // 현재 페이지 초기값 설정
     const itemsPerPage = 8;
     // 서버로부터 전체 페이지 수를 받아오는 함수
-    function getTotalPages() {
+    function getTotalPages() { 
         fetch(`/totalPages`)
             .then(response => response.json())
             .then(data => {

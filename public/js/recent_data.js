@@ -30,3 +30,4 @@ function infodata(page) {
         })
         .catch(error => console.error("Error fetching data: ", error));
 }
+ 

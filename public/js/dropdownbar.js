@@ -25,7 +25,7 @@ function search() {
         }
     });
 }
-
+ 
 document.getElementById("search_input").addEventListener("keyup", function (event) {
     if (event.key === "Enter") {
         search();

@@ -28,7 +28,7 @@ app.get('/a', function (req, res) {
         }
     });
 });
-
+ 
 // 전체 페이지 수를 반환하는 라우트
 app.get('/totalPages', function (req, res) {
     const itemsPerPage = 8; // 페이지 당 아이템 개수
